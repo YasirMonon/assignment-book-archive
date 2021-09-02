@@ -23,13 +23,17 @@ const showResult = (books, numList) => {
         output.textContent = '';
     } else {
         const booksNum = document.getElementById('book-foundlist');
-        booksNum.innerHTML = ` <h1>Search Result : Total <span class="text-gray-400">${numList}</span> Books Found</h1>`;
+        booksNum.innerHTML = ` <h1>Search Result : Total <span class="text-blue-400">${numList}</span> Books Found</h1>`;
         output.textContent = '';
 
         books.forEach(book => {
             console.log(book);
             // Image Load from API 
-            const imgUrlMedium = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
+            // const imgUrlMedium = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
+            //    conditionaly image show
+            book?.cover_i
+                ? (imgUrlMedium = `https://covers.openlibrary.org/b/id/${book?.cover_i}-M.jpg`)
+                : (imgUrlMedium = "images/error.png");
             // Create Div For Make card to show information from API
             const div = document.createElement('div');
             div.classList.add('mx-auto');
