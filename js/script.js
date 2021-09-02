@@ -1,7 +1,19 @@
+//Toggle Spinner
+const toggleSpinner = displayStyle => {
+    document.getElementById('spinner').style.display = displayStyle;
+}
+//Toggle Book Result
+const toggleBookResult = displayStyle => {
+    document.getElementById('showDetails').style.display = displayStyle;
+}
 // Show Books Api Call Function
 const showBooks = () => {
     const searchField = document.getElementById('searchInput');
     const showInput = searchField.value;
+
+    //show spinner
+    toggleSpinner('block');
+    toggleBookResult('none');
     console.log(showInput);
     searchField.value = '';
 
@@ -21,6 +33,7 @@ const showResult = (books, numList) => {
         const booksNum = document.getElementById('book-foundlist');
         booksNum.innerHTML = ` <h1><span class="text-red-600">Sorry !! No Results Found</span> <br>❌<br>Make sure that all words are spelled correctly or Try different keywords </h1>`;
         output.textContent = '';
+        toggleSpinner('none');
     } else {
         const booksNum = document.getElementById('book-foundlist');
         booksNum.innerHTML = ` <h1>Search Result : Total <span class="text-blue-400">${numList}</span> Books Found</h1>`;
@@ -52,8 +65,10 @@ const showResult = (books, numList) => {
     </div>
      `;
             output.appendChild(div);
-
+            toggleSpinner('none');
         });
+        // toggleSpinner('none');
+        // toggleBookResult('block');
     }
 
 
