@@ -5,11 +5,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/991a6b03a4.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Book's Archive</title>
 </head>
 
 <body>
+    <main>
+        <div class="text-center mt-16">
+            <h1 class="font-bold text-4xl  text-blue-500">BOOK'S<span class="text-gray-400"> ARCHIVE </span></h1>
+        </div>
+        <!-- Search Field Container -->
+        <div class="p-8 mb-10">
+            <div class="flex items-center rounded-lg shadow-xl w-2/4 mx-auto ">
+                <input
+                    class="rounded-l-full w-full py-4 px-6 text-gray-700 text-center leading-tight  focus:outline-none"
+                    id="searchInput" type="text" placeholder="Search Your Books..." w-5>
 
+                <div class="p-4">
+                    <button onclick="showBooks()"
+                        class="bg-blue-500 text-white rounded-full p-2 hover:bg-gray-400 focus:outline-none w-12 h-12 flex items-center justify-center">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- spinner start -->
+        <div id="spinner" class="flex items-center justify-center ">
+            <div class="w-10 h-10 border-b-2 border-blue-500 rounded-full animate-spin"></div>
+        </div>
+        <!-- spinner ends -->
+
+        <!-- Show Search Result Card Container -->
+        <div id="book-foundlist" class="bg-white text-1xl text-center mb-8 font-semibold text-blue-500">
+        </div>
+
+        <div id="showDetails" class="bg-white min-h-screen bg-gray-50 grid grid-cols-1 md:grid md:grid-cols-3">
+        </div>
+    </main>
+
+
+    <script src="/js/script.js"></script>
 </body>
 
 </html>
