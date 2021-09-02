@@ -2,18 +2,14 @@
 const toggleSpinner = displayStyle => {
     document.getElementById('spinner').style.display = displayStyle;
 }
-//Toggle Book Result
-const toggleBookResult = displayStyle => {
-    document.getElementById('showDetails').style.display = displayStyle;
-}
-// Show Books Api Call Function
+
 const showBooks = () => {
     const searchField = document.getElementById('searchInput');
     const showInput = searchField.value;
 
     //show spinner
     toggleSpinner('block');
-    toggleBookResult('none');
+
     console.log(showInput);
     searchField.value = '';
 
@@ -67,8 +63,7 @@ const showResult = (books, numList) => {
             output.appendChild(div);
             toggleSpinner('none');
         });
-        // toggleSpinner('none');
-        // toggleBookResult('block');
+
     }
 
 
